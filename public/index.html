@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="/style.css" />
+    <script
+      src="https://kit.fontawesome.com/4856dd579c.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://www.gstatic.com/firebasejs/9.1.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.1.3/firebase-firestore.js"></script>
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyCvxaIozAfz6Q-5pfbT9FIyMVowwGML3OA",
+        authDomain: "personal-portfolio-ca697.firebaseapp.com",
+        projectId: "personal-portfolio-ca697",
+        storageBucket: "personal-portfolio-ca697.appspot.com",
+        messagingSenderId: "475062216373",
+        appId: "1:475062216373:web:103902cc8d0689c62180fc",
+      };
+      const app = firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
+    </script>
+  </head>
+  <body>
+    <div id="header">
+      <div class="container">
+        <nav>
+          <img src="/images/logo.png" class="logo" alt="Logo" />
+          <ul id="sidemenu">
+            <li><a href="#header">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <i class="fas fa-times" onclick="closemenu()"></i>
+          </ul>
+          <i class="fas fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+          <p>Full Stack Developer</p>
+          <h1>Hi, I'm <span>Daniel Pinto</span><br />From Chicago</h1>
+        </div>
+      </div>
+    </div>
+    <div id="about">
+      <div class="container">
+        <div class="row">
+          <div class="about-col-1">
+            <img src="/images/smile.png" alt="Smile" />
+          </div>
+          <div class="about-col-2">
+            <h1 class="sub-title">About Me</h1>
+            <p>
+              I am a dedicated and passionate Full Stack Developer with
+              experience in front-end and back-end technologies. Growing up in a
+              Mexican household has given me many opportunities to travel and
+              work in different parts of Mexico, enriching my cultural and
+              professional experiences. My enthusiasm for technology is
+              unwavering; I'm the go-to person in my family for resolving issues
+              with Wi-Fi, TVs, laptops, phones, and other electronic devices. I
+              thrive on troubleshooting and finding innovative solutions to
+              tech-related challenges.
+            </p>
+            <div class="tab-titles">
+              <p class="tab-links active-link" onclick="opentab('skills')">
+                Skills
+              </p>
+              <p class="tab-links" onclick="opentab('experience')">
+                Experience
+              </p>
+              <p class="tab-links" onclick="opentab('education')">Education</p>
+            </div>
+            <div class="tab-contents active-tab" id="skills">
+              <ul>
+                <li>
+                  <span>Web Development</span><br />Creating and maintaining web
+                  apps
+                </li>
+                <li>
+                  <span>Database Management</span><br />Handling MySQL databases
+                </li>
+                <li>
+                  <span>API Integration</span><br />Implementing RESTful APIs
+                </li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="experience">
+              <ul>
+                <li>
+                  <span>2021 - 2024</span><br />Junior Full Stack Developer at
+                  iHotweb
+                </li>
+                <li>
+                  <span>2018 - 2020</span><br />Systems Implementation
+                  Specialist at CHC Distribution
+                </li>
+                <li>
+                  <span>2017 - 2018</span><br />IT Solutions Specialist at
+                  Highlanders Distribution
+                </li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="education">
+              <ul>
+                <li>
+                  <span>2024</span><br />Front-End Development at Course Careers
+                </li>
+                <li><span>2021</span><br />PCEP Certificate at OpenEDG, LLC</li>
+                <li>
+                  <span>2020</span><br />Python Developer Certificate at Udemy
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="portfolio">
+      <div class="container">
+        <h1 class="sub-title">My Work</h1>
+        <div class="work-list">
+          <div class="work">
+            <img src="/images/work-1.png" alt="Work 1" />
+            <div class="layer">
+              <h3>Beauty Blossoms Loyalty Program</h3>
+              <p>
+                This page lets you keep track of rewards for returning customers
+              </p>
+              <a href="https://www.bb27studio.com/"
+                ><i class="fas fa-external-link-alt"></i
+              ></a>
+            </div>
+          </div>
+          <div class="work">
+            <img src="/images/work-2.png" alt="Work 2" />
+            <div class="layer">
+              <h3>Task Manager App</h3>
+              <p>This app helps to keep track of daily tasks</p>
+              <a href="https://react-task-manager-fawn.vercel.app/"
+                ><i class="fas fa-external-link-alt"></i
+              ></a>
+            </div>
+          </div>
+          <div class="work">
+            <img src="/images/work-3.png" alt="Work 3" />
+            <div class="layer">
+              <h3>Fitness Tracker App</h3>
+              <p>
+                This app logs each one of your workout activities in both
+                English and Spanish
+              </p>
+              <a href="https://github.com/danielpinto-developer/fitness-tracker"
+                ><i class="fas fa-external-link-alt"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <a href="https://github.com/danielpinto-developer" class="btn"
+          >See more</a
+        >
+      </div>
+    </div>
+    <div id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="contact-left">
+            <h1 class="sub-title">Contact Me</h1>
+            <p>
+              <i class="fa-solid fa-paper-plane"></i>
+              danielpinto.developer@gmail.com
+            </p>
+            <p><i class="fas fa-phone-square-alt"></i> (714) 909-3322</p>
+            <a
+              href="https://www.linkedin.com/in/danielpinto2024"
+              class="social-btn"
+            >
+              <img
+                src="/images/profile.png"
+                alt="LinkedIn Icon"
+                class="button-image"
+              />
+            </a>
+          </div>
+          <div class="contact-right">
+            <form id="contact-form">
+              <input type="text" name="name" placeholder="Your Name" required />
+              <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                required
+              />
+              <textarea
+                name="message"
+                rows="6"
+                placeholder="Your Message"
+              ></textarea>
+              <button type="submit" class="btn btn2">Submit</button>
+            </form>
+            <span id="msg"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      var tablinks = document.getElementsByClassName("tab-links");
+      var tabcontents = document.getElementsByClassName("tab-contents");
+
+      function opentab(tabname) {
+        for (var tablink of tablinks) {
+          tablink.classList.remove("active-link");
+        }
+        for (var tabcontent of tabcontents) {
+          tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+      }
+    </script>
+    <script>
+      var sidemenu = document.getElementById("sidemenu");
+
+      function openmenu() {
+        sidemenu.style.right = "0";
+      }
+      function closemenu() {
+        sidemenu.style.right = "-200px";
+      }
+    </script>
+    <script>
+      const form = document.getElementById("contact-form");
+      const msg = document.getElementById("msg");
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+
+        console.log("Form data:", data);
+
+        try {
+          const response = await fetch("/api/submit-form", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data),
+          });
+
+          console.log("Response status:", response.status);
+
+          if (response.ok) {
+            msg.textContent = "Message sent successfully";
+            msg.style.color = "green";
+            form.reset();
+          } else {
+            const errorResponse = await response.text();
+            console.error("Error response text:", errorResponse);
+            msg.textContent = "Error sending message";
+            msg.style.color = "red";
+          }
+        } catch (error) {
+          console.error("Error:", error);
+          msg.textContent = "Error sending message";
+          msg.style.color = "red";
+        }
+      });
+    </script>
+  </body>
+</html>
